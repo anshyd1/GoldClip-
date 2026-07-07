@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="24dp"
+    android:gravity="center"
+    android:background="@color/cream">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="\u2726 GoldClip"
+        android:textSize="34sp"
+        android:textStyle="bold"
+        android:textColor="@color/gold_dark"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="32dp"
+        android:text="Floating clipboard tool"
+        android:textColor="@color/gold_dark"
+        android:alpha="0.7"/>
+
+    <Button android:id="@+id/btnAccessibility"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Step 1: Enable Accessibility"
+        android:backgroundTint="@color/gold"
+        android:textColor="@color/cream"/>
+
+    <Button android:id="@+id/btnOverlay"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:text="Step 2: Allow Overlay"
+        android:backgroundTint="@color/gold"
+        android:textColor="@color/cream"/>
+
+    <Button android:id="@+id/btnStart"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:text="Step 3: Start GoldClip"
+        android:backgroundTint="@color/gold_dark"
+        android:textColor="@color/cream"/>
+</LinearLayout>

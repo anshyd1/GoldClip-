@@ -5,14 +5,4 @@
 .DS_Store
 /build
 /captures
-.externalNativeBuild
-.cxx
-*.apk
-*.aab
-*.jks
-*.keystore
-*.log
-Thumbs.db
-/app/build/
-/app/release/
-.gradle/
+local.properties
