@@ -1,0 +1,33 @@
+# Android Studio
+*.iml
+.gradle
+/local.properties
+/.idea
+.DS_Store
+/build
+/captures
+.externalNativeBuild
+.cxx
+
+# APK files (generated)
+*.apk
+*.aab
+
+# Keystore (NEVER commit karo!)
+*.jks
+*.keystore
+
+# Log files
+*.log
+
+# OS Files
+Thumbs.db
+.DS_Store
+
+# Build outputs
+/app/build/
+/app/release/
+
+# Gradle
+.gradle/
+gradle-wrapper.jar
