@@ -30,60 +30,56 @@ jobs:
         with:
           packages: 'platforms;android-34 build-tools;34.0.0 platform-tools'
 
-      - name: 📦 Setup Gradle 8.5
-        uses: gradle/actions/setup-gradle@v3
-        with:
-          gradle-version: '8.5'
-
-      - name: 🔧 Generate Gradle Wrapper
+      - name: 📦 Install Gradle 8.5 manually
         run: |
-          gradle wrapper --gradle-version 8.5 --distribution-type bin
-          chmod +x gradlew
-          ls -la gradlew
+          wget -q https://services.gradle.org/distributions/gradle-8.5-bin.zip -O gradle.zip
+          unzip -q gradle.zip -d $HOME
+          echo "$HOME/gradle-8.5/bin" >> $GITHUB_PATH
+
+      - name: ✅ Verify tools
+        run: |
+          gradle --version
+          java -version
+          echo "ANDROID_HOME=$ANDROID_HOME"
 
       - name: 🏗️ Build Debug APK
-        run: |
-          ./gradlew assembleDebug --no-daemon --stacktrace --warning-mode all
+        run: gradle assembleDebug --no-daemon --stacktrace --info
 
       - name: 📋 Show APK location
+        if: always()
         run: |
-          echo "=== APK files ==="
-          find app/build/outputs -name "*.apk" -exec ls -lh {} \;
+          echo "=== Looking for APK ==="
+          find . -name "*.apk" 2>/dev/null || echo "No APK found"
+          echo ""
+          echo "=== Build outputs ==="
+          ls -la app/build/outputs/apk/debug/ 2>/dev/null || echo "No build folder"
 
-      - name: 📤 Upload APK as artifact
+      - name: 📤 Upload APK artifact
+        if: success()
         uses: actions/upload-artifact@v4
         with:
           name: GoldClip-APK
           path: app/build/outputs/apk/debug/*.apk
           retention-days: 30
 
-      - name: 🚀 Create GitHub Release
+      - name: 🚀 Create GitHub Release with APK
+        if: success()
         uses: softprops/action-gh-release@v2
         with:
           tag_name: v1.0.${{ github.run_number }}
           name: "✦ GoldClip v1.0.${{ github.run_number }}"
           files: app/build/outputs/apk/debug/*.apk
           body: |
-            ## ✦ GoldClip — Floating Clipboard Tool
+            ## ✦ GoldClip APK Ready!
             
-            **📲 Direct Install:** Neeche `app-debug.apk` download karo, phone pe tap karke install kar do.
-            
-            ### Requirements
-            - Android 7.0+ (API 24)
-            - "Install from unknown sources" ON karo (Settings → Security)
+            **📲 Install:** Neeche `app-debug.apk` download → phone pe tap → install
             
             ### Setup After Install
             1. App kholo
-            2. **Step 1** → Accessibility → GoldClip ON
-            3. **Step 2** → Overlay permission grant
-            4. **Step 3** → Start GoldClip
+            2. Step 1 → Accessibility → GoldClip ON
+            3. Step 2 → Overlay permission
+            4. Step 3 → Start GoldClip
             5. 🎉 Gold ball right side pe dikhegi!
-            
-            ### Features
-            - ✦ Ctrl+A / Ctrl+C / Ctrl+V / Ctrl+X buttons
-            - Auto-fade after 3 seconds
-            - Draggable anywhere
-            - Works in any app (WhatsApp, Chrome, etc.)
           draft: false
           prerelease: false
         env:
