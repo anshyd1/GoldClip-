@@ -1,23 +1,15 @@
 # GoldClip
 
-Android floating Ctrl+A / Ctrl+C / Ctrl+V / Ctrl+X clipboard tool.
+Android floating clipboard tool with Ctrl+A / Ctrl+C / Ctrl+V / Ctrl+X buttons.
 
-## Features
-- Floating gold ball on screen
-- Tap to expand panel with 4 buttons
-- Auto-fade after 3 seconds
-- Draggable anywhere
-- Works in any app via Accessibility Service
+## Build APK
+Push files, run GitHub Actions "Build APK" workflow.
+APK will appear in Releases.
 
-## Build
-1. Open in Android Studio
-2. Sync Gradle
-3. Run on device (Android 7.0+)
-
-## Setup
-1. Enable Accessibility Service (GoldClip)
-2. Allow Overlay permission
-3. Tap "Start GoldClip"
-
-## License
-MIT
+## Use
+1. Install APK
+2. Open app
+3. Enable Accessibility -> GoldClip
+4. Allow Overlay permission
+5. Start GoldClip
+6. Gold ball appears on right side of screen

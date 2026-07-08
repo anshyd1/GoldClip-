@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <style name="Theme.GoldClip" parent="Theme.MaterialComponents.DayNight.NoActionBar">
-        <item name="colorPrimary">@color/gold</item>
-        <item name="colorPrimaryDark">@color/gold_dark</item>
-        <item name="colorAccent">@color/gold</item>
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">#D4AF37</item>
+        <item name="colorPrimaryDark">#B8860B</item>
+        <item name="colorAccent">#FFD700</item>
     </style>
 </resources>

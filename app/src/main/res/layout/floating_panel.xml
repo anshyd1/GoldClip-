@@ -6,82 +6,46 @@
     android:background="@drawable/bg_panel"
     android:padding="12dp">
 
-    <View android:id="@+id/dragHandle"
+    <View
+        android:id="@+id/dragHandle"
         android:layout_width="60dp"
         android:layout_height="4dp"
         android:layout_gravity="center_horizontal"
         android:layout_marginBottom="10dp"
         android:background="@color/gold"/>
 
-    <LinearLayout android:id="@+id/btnAll"
-        android:layout_width="match_parent" android:layout_height="wrap_content"
-        android:orientation="horizontal" android:padding="14dp"
-        android:layout_marginBottom="8dp"
-        android:background="@drawable/bg_card" android:gravity="center_vertical">
-        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-            android:text="A" android:textSize="20sp" android:textStyle="bold"
-            android:layout_marginEnd="14dp" android:textColor="@color/gold_dark"/>
-        <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="vertical">
-            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-                android:text="Ctrl + A" android:textStyle="bold" android:textSize="15sp" android:textColor="#3a2a00"/>
-            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-                android:text="Select All" android:textSize="12sp" android:textColor="@color/gold_dark"/>
-        </LinearLayout>
-    </LinearLayout>
+    <Button
+        android:id="@+id/btnAll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Ctrl + A (Select All)"
+        android:layout_marginBottom="6dp"/>
 
-    <LinearLayout android:id="@+id/btnCopy"
-        android:layout_width="match_parent" android:layout_height="wrap_content"
-        android:orientation="horizontal" android:padding="14dp"
-        android:layout_marginBottom="8dp"
-        android:background="@drawable/bg_card" android:gravity="center_vertical">
-        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-            android:text="C" android:textSize="20sp" android:textStyle="bold"
-            android:layout_marginEnd="14dp" android:textColor="@color/gold_dark"/>
-        <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="vertical">
-            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-                android:text="Ctrl + C" android:textStyle="bold" android:textSize="15sp" android:textColor="#3a2a00"/>
-            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-                android:text="Copy" android:textSize="12sp" android:textColor="@color/gold_dark"/>
-        </LinearLayout>
-    </LinearLayout>
+    <Button
+        android:id="@+id/btnCopy"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Ctrl + C (Copy)"
+        android:layout_marginBottom="6dp"/>
 
-    <LinearLayout android:id="@+id/btnPaste"
-        android:layout_width="match_parent" android:layout_height="wrap_content"
-        android:orientation="horizontal" android:padding="14dp"
-        android:layout_marginBottom="8dp"
-        android:background="@drawable/bg_card" android:gravity="center_vertical">
-        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-            android:text="V" android:textSize="20sp" android:textStyle="bold"
-            android:layout_marginEnd="14dp" android:textColor="@color/gold_dark"/>
-        <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="vertical">
-            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-                android:text="Ctrl + V" android:textStyle="bold" android:textSize="15sp" android:textColor="#3a2a00"/>
-            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-                android:text="Paste" android:textSize="12sp" android:textColor="@color/gold_dark"/>
-        </LinearLayout>
-    </LinearLayout>
+    <Button
+        android:id="@+id/btnPaste"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Ctrl + V (Paste)"
+        android:layout_marginBottom="6dp"/>
 
-    <LinearLayout android:id="@+id/btnCut"
-        android:layout_width="match_parent" android:layout_height="wrap_content"
-        android:orientation="horizontal" android:padding="14dp"
-        android:layout_marginBottom="10dp"
-        android:background="@drawable/bg_card" android:gravity="center_vertical">
-        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-            android:text="X" android:textSize="20sp" android:textStyle="bold"
-            android:layout_marginEnd="14dp" android:textColor="@color/gold_dark"/>
-        <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="vertical">
-            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-                android:text="Ctrl + X" android:textStyle="bold" android:textSize="15sp" android:textColor="#3a2a00"/>
-            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-                android:text="Cut" android:textSize="12sp" android:textColor="@color/gold_dark"/>
-        </LinearLayout>
-    </LinearLayout>
+    <Button
+        android:id="@+id/btnCut"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Ctrl + X (Cut)"
+        android:layout_marginBottom="10dp"/>
 
-    <Button android:id="@+id/btnHide"
+    <Button
+        android:id="@+id/btnHide"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:text="Hide"
-        android:textColor="@color/gold_dark"
-        android:background="@drawable/bg_card"/>
+        android:text="Hide"/>
 </LinearLayout>
